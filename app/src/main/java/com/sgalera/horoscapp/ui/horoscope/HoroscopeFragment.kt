@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -35,7 +36,9 @@ class HoroscopeFragment : Fragment() {
     }
 
     private fun initList() {
-        horoscopeAdapter = HoroscopeAdapter()
+        horoscopeAdapter = HoroscopeAdapter(onItemSelected = {
+            Toast.makeText(context, getString(it.name), Toast.LENGTH_LONG).show()
+        })
 
         binding.rvHoroscope.apply {
             layoutManager = GridLayoutManager(context, 2)
