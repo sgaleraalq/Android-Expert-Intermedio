@@ -1,5 +1,7 @@
 package com.sgalera.horoscapp.data.network
 
+import com.sgalera.horoscapp.data.RespositoryImp
+import com.sgalera.horoscapp.domain.Repository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,5 +27,10 @@ object NetworkModule {
     @Provides
     fun provideHoroscopeApiService(retrofit: Retrofit):HoroscopeApiService{
         return retrofit.create(HoroscopeApiService::class.java)
+    }
+
+    @Provides
+    fun provideRepository(apiService: HoroscopeApiService): Repository {
+        return RespositoryImp(apiService)
     }
 }
