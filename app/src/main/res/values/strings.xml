@@ -2,6 +2,7 @@
     <string name="app_name">HoroscApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="arisname">[DEBUG] HoroscApp</string>
 
     <!--    BottomBar-->
     <string name="horoscope">Horoscope</string>
